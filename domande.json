@@ -1,0 +1,103 @@
+[
+    {
+      "domanda": "Qual è la capitale della Francia?",
+      "risposte": ["Parigi", "Lione", "Marsiglia", "Nizza"],
+      "giusta": 2
+    },
+    {
+      "domanda": "Qual è il pianeta più vicino al Sole?",
+      "risposte": ["Mercurio", "Venere", "Terra", "Marte"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Chi ha scritto \"La Divina Commedia\"?",
+      "risposte": ["Dante Alighieri", "Giovanni Boccaccio", "Francesco Petrarca", "Gabriele D'Annunzio"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Qual è l'elemento chimico con il simbolo O?",
+      "risposte": ["Ossigeno", "Oro", "Osmio", "Oganesson"],
+      "giusta": 3
+    },
+    {
+      "domanda": "Chi ha dipinto la Gioconda?",
+      "risposte": ["Leonardo da Vinci", "Michelangelo", "Raffaello", "Caravaggio"],
+      "giusta": 2
+    },
+    {
+      "domanda": "Qual è il monte più alto del mondo?",
+      "risposte": ["Everest", "K2", "Kangchenjunga", "Lhotse"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Quale paese ha inventato la pizza?",
+      "risposte": ["Italia", "Francia", "Stati Uniti", "Spagna"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Qual è la lingua più parlata al mondo?",
+      "risposte": ["Cinese mandarino", "Inglese", "Spagnolo", "Hindi"],
+      "giusta": 3
+    },
+    {
+      "domanda": "Chi è il padre della teoria della relatività?",
+      "risposte": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Qual è l'oceano più grande del mondo?",
+      "risposte": ["Oceano Pacifico", "Oceano Atlantico", "Oceano Indiano", "Oceano Artico"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Qual è la valuta del Giappone?",
+      "risposte": ["Yen", "Won", "Renminbi", "Baht"],
+      "giusta": 3
+    },
+    {
+      "domanda": "In quale anno è avvenuto il primo sbarco sulla Luna?",
+      "risposte": ["1969", "1959", "1979", "1989"],
+      "giusta": 3
+    },
+    {
+      "domanda": "Qual è il mammifero più grande del mondo?",
+      "risposte": ["Balena Blu", "Elefante Africano", "Orca", "Giraffa"],
+      "giusta": 2
+    },
+    {
+      "domanda": "Chi ha scoperto l'America?",
+      "risposte": ["Cristoforo Colombo", "Amerigo Vespucci", "Vasco da Gama", "Ferdinando Magellano"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Qual è la formula chimica dell'acqua?",
+      "risposte": ["H2O", "CO2", "NaCl", "O2"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Qual è l'animale simbolo dell'Australia?",
+      "risposte": ["Canguro", "Koala", "Emù", "Wombat"],
+      "giusta": 2
+    },
+    {
+      "domanda": "Chi è l'autore di \"Romeo e Giulietta\"?",
+      "risposte": ["William Shakespeare", "Charles Dickens", "Jane Austen", "George Orwell"],
+      "giusta": 3
+    },
+    {
+      "domanda": "Qual è il metallo più prezioso al mondo?",
+      "risposte": ["Oro", "Argento", "Platino", "Rame"],
+      "giusta": 2
+    },
+    {
+      "domanda": "Qual è il fiume più lungo d'Italia?",
+      "risposte": ["Po", "Arno", "Tevere", "Adige"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Qual è il colore primario non presente nella bandiera italiana?",
+      "risposte": ["Blu", "Rosso", "Verde", "Bianco"],
+      "giusta": 0
+    }
+  ]
+  
