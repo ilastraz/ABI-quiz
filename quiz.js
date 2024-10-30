@@ -1,88 +1,64 @@
-document.addEventListener("DOMContentLoaded", function() {
-  let domande = [];
-  let domandeSelezionate = [];
-  let currentIndex = 0;
-  let score = 0;
-
-  // Carica JSON delle domande
-  fetch('https://raw.githubusercontent.com/ilastraz/ABI-quiz/refs/heads/main/domande.json?token=GHSAT0AAAAAACXRKUSEZJMRMZV4Y73QTLVCZZCVPVQ')
-    .then(response => response.json())
-    .then(data => {
-      domande = data;
-      startQuiz();
-    });
-
-  // Inizializza Swiper
-  const swiper = new Swiper('.swiper-container-quiz', {
-    navigation: {
-      nextEl: '.swiper-button-next-quiz',
-      prevEl: '.swiper-button-prev-quiz',
-    },
-    allowTouchMove: false, // Per far avanzare solo con la logica del quiz
-  });
-
-  // Seleziona 5 domande casualmente
-  function startQuiz() {
-    domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
-    mostraDomanda();
-  }
-
-  // Mostra la domanda corrente
-  function mostraDomanda() {
-    if (currentIndex < domandeSelezionate.length) {
-      const domandaCorrente = domandeSelezionate[currentIndex];
-      document.querySelector(".domanda").textContent = domandaCorrente.domanda;
-      const opzioni = document.querySelectorAll(".opzione");
-
-      opzioni.forEach((opzione, index) => {
-        opzione.textContent = domandaCorrente.risposte[index];
-        opzione.dataset.index = index;
-        opzione.classList.remove("giusta", "sbagliata");
+document.addEventListener("DOMContentLoaded", function () {
+    let domande = [];
+    let domandeSelezionate = [];
+    let currentIndex = 0;
+  
+    // Carica JSON delle domande
+    fetch('https://raw.githubusercontent.com/ilastraz/ABI-quiz/refs/heads/main/domande.json?token=GHSAT0AAAAAACXRKUSEPGICKIQ6ZOTCBCJIZZCWHTA')
+      .then(response => response.json())
+      .then(data => {
+        domande = data;
+        startQuiz();
       });
-    } else {
-      mostraRisultato();
+  
+    // Inizializza Swiper
+    const swiper = new Swiper('.swiper-container', {
+      allowTouchMove: false, // Impedisce lo scorrimento manuale per passare solo con la logica del quiz
+    });
+  
+    // Seleziona 5 domande casualmente
+    function startQuiz() {
+      domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
+      mostraDomanda();
     }
-  }
-
-  // Gestisce il click su una risposta
-  document.querySelectorAll(".opzione").forEach(opzione => {
-    opzione.addEventListener("click", function() {
-      const domandaCorrente = domandeSelezionate[currentIndex];
-      const rispostaSelezionata = parseInt(this.dataset.index);
-
-      if (rispostaSelezionata === domandaCorrente.giusta) {
-        this.classList.add("giusta");
-        score++;
-      } else {
-        this.classList.add("sbagliata");
-        document.querySelector(`.opzione[data-index="${domandaCorrente.giusta}"]`).classList.add("giusta");
+  
+    // Mostra la domanda corrente
+    function mostraDomanda() {
+      if (currentIndex < domandeSelezionate.length) {
+        const domandaCorrente = domandeSelezionate[currentIndex];
+        document.querySelector(".domanda").textContent = domandaCorrente.domanda;
+  
+        const opzioni = document.querySelectorAll(".opzione");
+        opzioni.forEach((opzione, index) => {
+          opzione.textContent = domandaCorrente.risposte[index];
+          opzione.dataset.index = index; // Assegna l'indice della risposta all'attributo data-index
+          opzione.classList.remove("giusta", "sbagliata"); // Rimuove le classi giusta/sbagliata
+        });
       }
-
-      // Passa alla prossima domanda con Swiper dopo 2 secondi
-      setTimeout(() => {
-        currentIndex++;
-        if (currentIndex < domandeSelezionate.length) {
-          swiper.slideNext();
-          mostraDomanda();
+    }
+  
+    // Gestisce il click su una risposta
+    document.querySelectorAll(".opzione").forEach(opzione => {
+      opzione.addEventListener("click", function () {
+        const domandaCorrente = domandeSelezionate[currentIndex];
+        const rispostaSelezionata = parseInt(this.dataset.index);
+  
+        if (rispostaSelezionata === domandaCorrente.giusta) {
+          this.classList.add("giusta");
         } else {
-          mostraRisultato();
+          this.classList.add("sbagliata");
+          document.querySelector(`.opzione[data-index="${domandaCorrente.giusta}"]`).classList.add("giusta");
         }
-      }, 2000);
+  
+        // Passa alla prossima domanda con Swiper dopo 2 secondi
+        setTimeout(() => {
+          currentIndex++;
+          if (currentIndex < domandeSelezionate.length) {
+            swiper.slideNext();
+            mostraDomanda();
+          }
+        }, 2000);
+      });
     });
   });
-
-  // Mostra il risultato finale
-  function mostraRisultato() {
-    document.querySelector(".risultato").textContent = `Bravo, ne hai indovinate ${score} su 5!`;
-    document.querySelector(".risultato").classList.remove("hidden");
-  }
-
-  // Bottone per ripetere il quiz
-  document.querySelector(".ripeti-quiz").addEventListener("click", function() {
-    currentIndex = 0;
-    score = 0;
-    swiper.slideTo(0);
-    document.querySelector(".risultato").classList.add("hidden");
-    startQuiz();
-  });
-});
+  
