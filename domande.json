@@ -10,7 +10,7 @@
       "giusta": 1
     },
     {
-      "domanda": "Chi ha scritto \"La Divina Commedia\"?",
+      "domanda": "Chi ha scritto La Divina Commedia",
       "risposte": ["Dante Alighieri", "Giovanni Boccaccio", "Francesco Petrarca", "Gabriele D'Annunzio"],
       "giusta": 0
     },
