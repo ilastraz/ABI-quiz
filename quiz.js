@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     startButton.addEventListener("click", function () {
       if (quizStart && quizAnswerWrapper) {
         quizStart.style.display = "none";
-        quizAnswerWrapper.style.display = "block";
+        quizAnswerWrapper.style.display = "flex";
       }
     });
   } else {
