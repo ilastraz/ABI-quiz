@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startQuiz() {
-    // Seleziona 5 domande casuali dal totale senza modificarle direttamente
-    domandeSelezionate = [...domande].sort(() => 0.5 - Math.random()).slice(0, 5);
+    // Seleziona 5 domande casuali dal totale
+    domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
     currentIndex = 0;
     score = 0;
 
@@ -64,11 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opzione.textContent = domandaCorrente.risposte[index];
         opzione.dataset.index = index;
         opzione.classList.remove("corretta", "sbagliata");
-        opzione.style.transition = "background-color 0.5s ease, transform 0.5s ease";
       });
-
-      quizAnswerWrapper.style.transition = "opacity 0.5s ease";
-      quizAnswerWrapper.style.opacity = 1;
     } else {
       mostraRisultato();
     }
@@ -88,13 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       setTimeout(() => {
-        quizAnswerWrapper.style.opacity = 0;
-        setTimeout(() => {
-          opzioni.forEach(opzione => {
-            opzione.classList.remove("corretta", "sbagliata");
-          });
-          mostraDomanda();
-        }, 500); // Attesa per la transizione di scomparsa
+        opzioni.forEach(opzione => {
+          opzione.classList.remove("corretta", "sbagliata");
+        });
+        currentIndex++;
+        mostraDomanda();
       }, 1000); // 1 secondo di attesa prima di cambiare domanda
     });
   });
