@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const quizAnswerWrapper = document.querySelector(".quiz-answer-wrapper");
   const quizAnswer = document.querySelector(".quiz-answer");
   const quizEnd = document.querySelector(".quiz-end");
+  const quizEndNumber = document.querySelector(".quiz-end-number");
   const opzioni = document.querySelectorAll(".quiz-option");
 
   let domande = [];
@@ -81,6 +82,9 @@ document.addEventListener("DOMContentLoaded", function () {
     quizAnswerWrapper.style.display = "none";
     if (quizEnd) {
       quizEnd.style.display = "block";
+      if (quizEndNumber) {
+        quizEndNumber.textContent = score;
+      }
     }
     console.log("Quiz terminato. Punteggio:", score);
     // Puoi implementare una schermata di risultato qui
