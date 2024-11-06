@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const quizStart = document.querySelector(".quiz-start");
   const quizAnswerWrapper = document.querySelector(".quiz-answer-wrapper");
   const quizAnswer = document.querySelector(".quiz-answer");
+  const quizEnd = document.querySelector(".quiz-end");
   const opzioni = document.querySelectorAll(".quiz-option");
 
   let domande = [];
@@ -78,6 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
   function mostraRisultato() {
     // Mostra il riepilogo del quiz
     quizAnswerWrapper.style.display = "none";
+    if (quizEnd) {
+      quizEnd.style.display = "block";
+    }
     console.log("Quiz terminato. Punteggio:", score);
     // Puoi implementare una schermata di risultato qui
   }
