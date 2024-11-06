@@ -4,8 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentIndex = 0;
   let score = 0;
 
-  // Carica JSON delle domande
-  fetch('percorso/delle/domande.json')
+  // Carica JSON delle domande dall'URL specificato
+  fetch('https://raw.githubusercontent.com/ilastraz/ABI-quiz/refs/heads/main/domande.json')
     .then(response => response.json())
     .then(data => {
       domande = data;
@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startQuiz() {
+    // Seleziona 5 domande casualmente
     domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
     currentIndex = 0;
     score = 0;
@@ -74,8 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".quiz-end").style.display = "block";
       document.querySelector(".quiz-end").classList.add("show");
 
+      // Mostra il punteggio
       document.querySelector(".quiz-end-number").textContent = score;
 
+      // Cambia il messaggio finale in base al punteggio
       const risultatoTesto = document.querySelector(".quiz-end-p");
       if (score <= 1) {
         risultatoTesto.textContent = "Non è andata benissimo, ma puoi sempre riprovare!";
