@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
         opzione.textContent = domandaCorrente.risposte[index];
         opzione.dataset.index = index;
         opzione.classList.remove("corretta", "sbagliata");
+        opzione.style.transition = "background-color 0.5s ease, transform 0.5s ease";
       });
     } else {
       mostraRisultato();
@@ -85,7 +86,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       setTimeout(() => {
         currentIndex++;
-        mostraDomanda();
+        quizAnswerWrapper.style.opacity = 0;
+        setTimeout(() => {
+          mostraDomanda();
+          quizAnswerWrapper.style.opacity = 1;
+        }, 500); // Attesa per la transizione di scomparsa
       }, 1000); // 1 secondo di attesa prima di cambiare domanda
     });
   });
