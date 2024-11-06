@@ -1,64 +1,98 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let domande = [];
-    let domandeSelezionate = [];
-    let currentIndex = 0;
-  
-    // Carica JSON delle domande
-    fetch('https://raw.githubusercontent.com/ilastraz/ABI-quiz/refs/heads/main/domande.json?token=GHSAT0AAAAAACXRKUSEPGICKIQ6ZOTCBCJIZZCWHTA')
-      .then(response => response.json())
-      .then(data => {
-        domande = data;
-        startQuiz();
-      });
-  
-    // Inizializza Swiper
-    const swiper = new Swiper('.swiper-container', {
-      allowTouchMove: false, // Impedisce lo scorrimento manuale per passare solo con la logica del quiz
+  let domande = [];
+  let domandeSelezionate = [];
+  let currentIndex = 0;
+  let score = 0;
+
+  // Carica JSON delle domande
+  fetch('percorso/delle/domande.json')
+    .then(response => response.json())
+    .then(data => {
+      domande = data;
+      initializeQuiz();
     });
-  
-    // Seleziona 5 domande casualmente
-    function startQuiz() {
-      domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
-      mostraDomanda();
-    }
-  
-    // Mostra la domanda corrente
-    function mostraDomanda() {
-      if (currentIndex < domandeSelezionate.length) {
-        const domandaCorrente = domandeSelezionate[currentIndex];
-        document.querySelector(".domanda").textContent = domandaCorrente.domanda;
-  
-        const opzioni = document.querySelectorAll(".opzione");
-        opzioni.forEach((opzione, index) => {
-          opzione.textContent = domandaCorrente.risposte[index];
-          opzione.dataset.index = index; // Assegna l'indice della risposta all'attributo data-index
-          opzione.classList.remove("giusta", "sbagliata"); // Rimuove le classi giusta/sbagliata
-        });
-      }
-    }
-  
-    // Gestisce il click su una risposta
-    document.querySelectorAll(".opzione").forEach(opzione => {
-      opzione.addEventListener("click", function () {
-        const domandaCorrente = domandeSelezionate[currentIndex];
-        const rispostaSelezionata = parseInt(this.dataset.index);
-  
-        if (rispostaSelezionata === domandaCorrente.giusta) {
-          this.classList.add("giusta");
-        } else {
-          this.classList.add("sbagliata");
-          document.querySelector(`.opzione[data-index="${domandaCorrente.giusta}"]`).classList.add("giusta");
-        }
-  
-        // Passa alla prossima domanda con Swiper dopo 2 secondi
-        setTimeout(() => {
-          currentIndex++;
-          if (currentIndex < domandeSelezionate.length) {
-            swiper.slideNext();
-            mostraDomanda();
-          }
-        }, 2000);
+
+  function initializeQuiz() {
+    document.querySelector(".quiz-start-button").addEventListener("click", function () {
+      document.querySelector(".quiz-start").classList.remove("show");
+      setTimeout(() => {
+        document.querySelector(".quiz-start").style.display = "none";
+        document.querySelector(".quiz-answer-wrapper").style.display = "block";
+        document.querySelector(".quiz-answer-wrapper").classList.add("show");
+      }, 500); // Tempo necessario per completare la transizione
+      startQuiz();
+    });
+  }
+
+  function startQuiz() {
+    domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
+    currentIndex = 0;
+    score = 0;
+    mostraDomanda();
+  }
+
+  function mostraDomanda() {
+    if (currentIndex < domandeSelezionate.length) {
+      const domandaCorrente = domandeSelezionate[currentIndex];
+      document.querySelector(".quiz-answer").textContent = domandaCorrente.domanda;
+
+      const opzioni = document.querySelectorAll(".quiz-option");
+      opzioni.forEach((opzione, index) => {
+        opzione.textContent = domandaCorrente.risposte[index];
+        opzione.dataset.index = index;
+        opzione.classList.remove("corretta", "sbagliata");
       });
+    } else {
+      mostraRisultato();
+    }
+  }
+
+  document.querySelectorAll(".quiz-option").forEach(opzione => {
+    opzione.addEventListener("click", function () {
+      const domandaCorrente = domandeSelezionate[currentIndex];
+      const rispostaSelezionata = parseInt(this.dataset.index);
+
+      if (rispostaSelezionata === domandaCorrente.giusta) {
+        this.classList.add("corretta");
+        score++;
+      } else {
+        this.classList.add("sbagliata");
+        document.querySelector(`.quiz-option[data-index="${domandaCorrente.giusta}"]`).classList.add("corretta");
+      }
+
+      setTimeout(() => {
+        currentIndex++;
+        mostraDomanda();
+      }, 2000);
     });
   });
-  
+
+  function mostraRisultato() {
+    document.querySelector(".quiz-answer-wrapper").classList.remove("show");
+    setTimeout(() => {
+      document.querySelector(".quiz-answer-wrapper").style.display = "none";
+      document.querySelector(".quiz-end").style.display = "block";
+      document.querySelector(".quiz-end").classList.add("show");
+
+      document.querySelector(".quiz-end-number").textContent = score;
+
+      const risultatoTesto = document.querySelector(".quiz-end-p");
+      if (score <= 1) {
+        risultatoTesto.textContent = "Non è andata benissimo, ma puoi sempre riprovare!";
+      } else if (score <= 3) {
+        risultatoTesto.textContent = "Non male! Ma puoi migliorare!";
+      } else {
+        risultatoTesto.textContent = "Ottimo lavoro! Sei molto preparato!";
+      }
+    }, 500);
+  }
+
+  document.querySelector(".quiz-start-restart").addEventListener("click", function () {
+    document.querySelector(".quiz-end").classList.remove("show");
+    setTimeout(() => {
+      document.querySelector(".quiz-end").style.display = "none";
+      document.querySelector(".quiz-start").style.display = "block";
+      document.querySelector(".quiz-start").classList.add("show");
+    }, 500);
+  });
+});
