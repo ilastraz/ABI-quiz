@@ -47,8 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function startQuiz() {
-    // Seleziona 5 domande casuali dal totale
-    domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
+    // Seleziona 5 domande casuali dal totale senza modificarle direttamente
+    domandeSelezionate = [...domande].sort(() => 0.5 - Math.random()).slice(0, 5);
     currentIndex = 0;
     score = 0;
 
