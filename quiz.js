@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const quizEnd = document.querySelector(".quiz-end");
   const quizEndNumber = document.querySelector(".quiz-end-number");
   const quizEndText = document.querySelector(".quiz-end-p");
+  const restartButton = document.querySelector('[data-button="restart"]');
   const opzioni = document.querySelectorAll(".quiz-option");
 
   let domande = [];
@@ -32,6 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   } else {
     console.error("Elemento con data-button=\"start\" non trovato nel DOM.");
+  }
+
+  if (restartButton) {
+    restartButton.addEventListener("click", function () {
+      if (quizEnd && quizStart) {
+        quizEnd.style.display = "none";
+        quizStart.style.display = "block";
+      }
+    });
+  } else {
+    console.error("Elemento con data-button=\"restart\" non trovato nel DOM.");
   }
 
   function startQuiz() {
