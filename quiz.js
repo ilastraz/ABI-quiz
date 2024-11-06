@@ -60,9 +60,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const domandaCorrente = domandeSelezionate[currentIndex];
       quizAnswer.textContent = domandaCorrente.domanda;
 
+      // Randomizza l'ordine delle risposte
+      const risposteRandom = [...domandaCorrente.risposte].sort(() => 0.5 - Math.random());
+
       opzioni.forEach((opzione, index) => {
-        opzione.textContent = domandaCorrente.risposte[index];
-        opzione.dataset.index = index;
+        opzione.textContent = risposteRandom[index];
+        opzione.dataset.index = domandaCorrente.risposte.indexOf(risposteRandom[index]);
         opzione.classList.remove("corretta", "sbagliata");
       });
     } else {
