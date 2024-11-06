@@ -88,12 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       setTimeout(() => {
-        opzioni.forEach(opzione => {
-          opzione.classList.remove("corretta", "sbagliata");
-        });
-        currentIndex++;
         quizAnswerWrapper.style.opacity = 0;
         setTimeout(() => {
+          opzioni.forEach(opzione => {
+            opzione.classList.remove("corretta", "sbagliata");
+          });
           mostraDomanda();
         }, 500); // Attesa per la transizione di scomparsa
       }, 1000); // 1 secondo di attesa prima di cambiare domanda
