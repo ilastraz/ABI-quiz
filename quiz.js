@@ -66,6 +66,9 @@ document.addEventListener("DOMContentLoaded", function () {
         opzione.classList.remove("corretta", "sbagliata");
         opzione.style.transition = "background-color 0.5s ease, transform 0.5s ease";
       });
+
+      quizAnswerWrapper.style.transition = "opacity 0.5s ease";
+      quizAnswerWrapper.style.opacity = 1;
     } else {
       mostraRisultato();
     }
@@ -89,7 +92,6 @@ document.addEventListener("DOMContentLoaded", function () {
         quizAnswerWrapper.style.opacity = 0;
         setTimeout(() => {
           mostraDomanda();
-          quizAnswerWrapper.style.opacity = 1;
         }, 500); // Attesa per la transizione di scomparsa
       }, 1000); // 1 secondo di attesa prima di cambiare domanda
     });
