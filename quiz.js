@@ -88,6 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       setTimeout(() => {
+        opzioni.forEach(opzione => {
+          opzione.classList.remove("corretta", "sbagliata");
+        });
         currentIndex++;
         quizAnswerWrapper.style.opacity = 0;
         setTimeout(() => {
