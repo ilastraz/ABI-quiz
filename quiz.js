@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const quizAnswer = document.querySelector(".quiz-answer");
   const quizEnd = document.querySelector(".quiz-end");
   const quizEndNumber = document.querySelector(".quiz-end-number");
+  const quizEndText = document.querySelector(".quiz-end-p");
   const opzioni = document.querySelectorAll(".quiz-option");
 
   let domande = [];
@@ -84,6 +85,15 @@ document.addEventListener("DOMContentLoaded", function () {
       quizEnd.style.display = "block";
       if (quizEndNumber) {
         quizEndNumber.textContent = score;
+      }
+      if (quizEndText) {
+        if (score < 2) {
+          quizEndText.textContent = "Non è un gran punteggio, ma niente paura. Segui i nostri consigli per imparare a difenderti dalle truffe.";
+        } else if (score <= 3) {
+          quizEndText.textContent = "Non male, sei sulla buona strada. Con i nostri consigli sarai pronto a difenderti da ogni tentativo di truffa!";
+        } else if (score >= 4) {
+          quizEndText.textContent = "Complimenti, sei informato! Continua a tenerti aggiornato: le truffe hanno mille volti e la sicurezza non è mai troppa.";
+        }
       }
     }
     console.log("Quiz terminato. Punteggio:", score);
