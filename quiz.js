@@ -2,15 +2,83 @@ document.addEventListener("DOMContentLoaded", function () {
   const startButton = document.querySelector('[data-button="start"]');
   const quizStart = document.querySelector(".quiz-start");
   const quizAnswerWrapper = document.querySelector(".quiz-answer-wrapper");
+  const quizAnswer = document.querySelector(".quiz-answer");
+  const opzioni = document.querySelectorAll(".quiz-option");
 
+  let domande = [];
+  let domandeSelezionate = [];
+  let currentIndex = 0;
+  let score = 0;
+
+  // Carica JSON delle domande dall'URL specificato
+  fetch('https://raw.githubusercontent.com/ilastraz/ABI-quiz/refs/heads/main/domande.json')
+    .then(response => response.json())
+    .then(data => {
+      domande = data;
+    });
+
+  // Inizia il quiz
   if (startButton) {
     startButton.addEventListener("click", function () {
       if (quizStart && quizAnswerWrapper) {
         quizStart.style.display = "none";
         quizAnswerWrapper.style.display = "flex";
+
+        startQuiz();
       }
     });
   } else {
     console.error("Elemento con data-button=\"start\" non trovato nel DOM.");
+  }
+
+  function startQuiz() {
+    // Seleziona 5 domande casuali dal totale
+    domandeSelezionate = domande.sort(() => 0.5 - Math.random()).slice(0, 5);
+    currentIndex = 0;
+    score = 0;
+
+    mostraDomanda();
+  }
+
+  function mostraDomanda() {
+    if (currentIndex < domandeSelezionate.length) {
+      const domandaCorrente = domandeSelezionate[currentIndex];
+      quizAnswer.textContent = domandaCorrente.domanda;
+
+      opzioni.forEach((opzione, index) => {
+        opzione.textContent = domandaCorrente.risposte[index];
+        opzione.dataset.index = index;
+        opzione.classList.remove("corretta", "sbagliata");
+      });
+    } else {
+      mostraRisultato();
+    }
+  }
+
+  opzioni.forEach(opzione => {
+    opzione.addEventListener("click", function () {
+      const domandaCorrente = domandeSelezionate[currentIndex];
+      const rispostaSelezionata = parseInt(this.dataset.index);
+
+      if (rispostaSelezionata === domandaCorrente.giusta) {
+        this.classList.add("corretta");
+        score++;
+      } else {
+        this.classList.add("sbagliata");
+        document.querySelector(`.quiz-option[data-index="${domandaCorrente.giusta}"]`).classList.add("corretta");
+      }
+
+      setTimeout(() => {
+        currentIndex++;
+        mostraDomanda();
+      }, 1000); // 1 secondo di attesa prima di cambiare domanda
+    });
+  });
+
+  function mostraRisultato() {
+    // Mostra il riepilogo del quiz
+    quizAnswerWrapper.style.display = "none";
+    console.log("Quiz terminato. Punteggio:", score);
+    // Puoi implementare una schermata di risultato qui
   }
 });
