@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
           opzione.textContent = risposteRandom[index];
           opzione.dataset.index = domandaCorrente.risposte.indexOf(risposteRandom[index]);
           opzione.classList.remove("corretta", "sbagliata");
-          opzione.style.display = "block";
+          opzione.style.display = "flex";
         } else {
           opzione.style.display = "none";
         }
