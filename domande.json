@@ -1,103 +1,78 @@
 [
     {
-      "domanda": "Qual è la capitale della Francia?",
-      "risposte": ["Parigi", "Lione", "Marsiglia", "Nizza"],
-      "giusta": 2
-    },
-    {
-      "domanda": "Qual è il pianeta più vicino al Sole?",
-      "risposte": ["Mercurio", "Venere", "Terra", "Marte"],
+      "domanda": "Cos'è lo smishing?",
+      "risposte": ["Un attacco tramite email", "Un attacco tramite SMS", "Un attacco tramite telefonate vocali", "Un malware per PC"],
       "giusta": 1
     },
     {
-      "domanda": "Chi ha scritto La Divina Commedia",
-      "risposte": ["Dante Alighieri", "Giovanni Boccaccio", "Francesco Petrarca", "Gabriele D'Annunzio"],
+      "domanda": "Quale dei seguenti è un chiaro indicatore di un attacco di smishing?",
+      "risposte": ["Richiesta di azione immediata", "Uso di un linguaggio tecnico complesso", "Notifica SMS di accesso al proprio Digital Banking", "Entrambe a e c"],
       "giusta": 0
     },
     {
-      "domanda": "Qual è l'elemento chimico con il simbolo O?",
-      "risposte": ["Ossigeno", "Oro", "Osmio", "Oganesson"],
-      "giusta": 3
+      "domanda": "Cosa si intende per SIM swap?",
+      "risposte": ["Il trasferimento del proprio numero di telefono su una nuova SIM card", "Un attacco che utilizza la rete Wi-Fi pubblica", "Una sostituzione legittima della SIM in un negozio", "Un attacco che disattiva il firewall del dispositivo"],
+      "giusta": 0
     },
     {
-      "domanda": "Chi ha dipinto la Gioconda?",
-      "risposte": ["Leonardo da Vinci", "Michelangelo", "Raffaello", "Caravaggio"],
-      "giusta": 2
-    },
-    {
-      "domanda": "Qual è il monte più alto del mondo?",
-      "risposte": ["Everest", "K2", "Kangchenjunga", "Lhotse"],
+      "domanda": "Qual è l'obiettivo principale di un attacco di SIM swap?",
+      "risposte": ["Negare la possibilità di ricevere chiamate", "Sottrarre agli utenti informazioni confidenziali o sensibili", "Installare malware sul dispositivo", "Disattivare la connessione dati"],
       "giusta": 1
     },
     {
-      "domanda": "Quale paese ha inventato la pizza?",
-      "risposte": ["Italia", "Francia", "Stati Uniti", "Spagna"],
-      "giusta": 0
-    },
-    {
-      "domanda": "Qual è la lingua più parlata al mondo?",
-      "risposte": ["Cinese mandarino", "Inglese", "Spagnolo", "Hindi"],
+      "domanda": "Quale delle seguenti è una caratteristica comune dei falsi investimenti online?",
+      "risposte": ["Promesse di rendimenti elevati e sicuri", "Chiedere piccole somme di denaro per iniziare", "Possibilità di investimenti senza rischi", "Tutte le risposte"],
       "giusta": 3
     },
     {
-      "domanda": "Chi è il padre della teoria della relatività?",
-      "risposte": ["Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla"],
-      "giusta": 1
-    },
-    {
-      "domanda": "Qual è l'oceano più grande del mondo?",
-      "risposte": ["Oceano Pacifico", "Oceano Atlantico", "Oceano Indiano", "Oceano Artico"],
-      "giusta": 0
-    },
-    {
-      "domanda": "Qual è la valuta del Giappone?",
-      "risposte": ["Yen", "Won", "Renminbi", "Baht"],
+      "domanda": "Come puoi verificare se un sito di investimento è affidabile?",
+      "risposte": ["Controllare l'URL e il certificato HTTPS", "Fidarsi delle recensioni sui social media", "Effettuare subito un piccolo deposito per provare", "Verificare la registrazione presso la CONSOB"],
       "giusta": 3
     },
     {
-      "domanda": "In quale anno è avvenuto il primo sbarco sulla Luna?",
-      "risposte": ["1969", "1959", "1979", "1989"],
-      "giusta": 3
-    },
-    {
-      "domanda": "Qual è il mammifero più grande del mondo?",
-      "risposte": ["Balena Blu", "Elefante Africano", "Orca", "Giraffa"],
+      "domanda": "Quali di questi suggerimenti non sono utili per la creazione di una password sicura?",
+      "risposte": ["Usare parole scritte al contrario", "Usare una combinazione di lettere maiuscole, minuscole, numeri e simboli", "Usare una lunga serie di parole o caratteri senza un apparente senso", "Usare il proprio nome o data di nascita"],
       "giusta": 2
     },
     {
-      "domanda": "Chi ha scoperto l'America?",
-      "risposte": ["Cristoforo Colombo", "Amerigo Vespucci", "Vasco da Gama", "Ferdinando Magellano"],
+      "domanda": "Quale dei seguenti strumenti è utile per gestire in modo sicuro le password?",
+      "risposte": ["Un file Excel protetto", "Un gestore di password", "Scriverle su un foglio di carta", "Memorizzarle nella cronologia del browser"],
       "giusta": 1
     },
     {
-      "domanda": "Qual è la formula chimica dell'acqua?",
-      "risposte": ["H2O", "CO2", "NaCl", "O2"],
-      "giusta": 1
-    },
-    {
-      "domanda": "Qual è l'animale simbolo dell'Australia?",
-      "risposte": ["Canguro", "Koala", "Emù", "Wombat"],
-      "giusta": 2
-    },
-    {
-      "domanda": "Chi è l'autore di \"Romeo e Giulietta\"?",
-      "risposte": ["William Shakespeare", "Charles Dickens", "Jane Austen", "George Orwell"],
+      "domanda": "Come posso riconoscere un allegato sospetto?",
+      "risposte": ["L’allegato è un file eseguibile", "Oggetto e corpo del testo e-mail sono generici e vaghi", "Senso di urgenza", "Tutte le risposte"],
       "giusta": 3
     },
     {
-      "domanda": "Qual è il metallo più prezioso al mondo?",
-      "risposte": ["Oro", "Argento", "Platino", "Rame"],
-      "giusta": 2
-    },
-    {
-      "domanda": "Qual è il fiume più lungo d'Italia?",
-      "risposte": ["Po", "Arno", "Tevere", "Adige"],
+      "domanda": "Qual è un buon modo per proteggersi dai download pericolosi?",
+      "risposte": ["Scaricare solo da fonti affidabili e ufficiali", "Disattivare l'antivirus durante il download", "Ignorare gli aggiornamenti di sicurezza", "Accettare tutte le richieste di autorizzazione"],
       "giusta": 0
     },
     {
-      "domanda": "Qual è il colore primario non presente nella bandiera italiana?",
-      "risposte": ["Blu", "Rosso", "Verde", "Bianco"],
+      "domanda": "Un attacco di smishing può essere evitato non cliccando sui link sospetti ricevuti via SMS.",
+      "risposte": ["Vero", "Falso"],
       "giusta": 0
+    },
+    {
+      "domanda": "Le piattaforme di investimento online che chiedono pagamenti anticipati sono sempre sicure.",
+      "risposte": ["Vero", "Falso"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Riutilizzare la stessa password su più account aumenta il rischio di violazioni della sicurezza.",
+      "risposte": ["Vero", "Falso"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Un antivirus aggiornato è sufficiente per proteggersi da tutti i tipi di attacchi online.",
+      "risposte": ["Vero", "Falso"],
+      "giusta": 1
+    },
+    {
+      "domanda": "Le applicazioni scaricate da store ufficiali sono sempre sicure al 100%.",
+      "risposte": ["Vero", "Falso"],
+      "giusta": 1
     }
   ]
   

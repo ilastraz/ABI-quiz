@@ -64,9 +64,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const risposteRandom = [...domandaCorrente.risposte].sort(() => 0.5 - Math.random());
 
       opzioni.forEach((opzione, index) => {
-        opzione.textContent = risposteRandom[index];
-        opzione.dataset.index = domandaCorrente.risposte.indexOf(risposteRandom[index]);
-        opzione.classList.remove("corretta", "sbagliata");
+        if (index < risposteRandom.length) {
+          opzione.textContent = risposteRandom[index];
+          opzione.dataset.index = domandaCorrente.risposte.indexOf(risposteRandom[index]);
+          opzione.classList.remove("corretta", "sbagliata");
+          opzione.style.display = "block";
+        } else {
+          opzione.style.display = "none";
+        }
       });
     } else {
       mostraRisultato();
