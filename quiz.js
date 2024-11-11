@@ -45,6 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (quizEnd && quizStart) {
         quizEnd.style.display = "none";
         quizStart.style.display = "block";
+        quizStart.style.opacity = 0;
+        setTimeout(() => {
+          quizStart.style.transition = "opacity 0.5s ease";
+          quizStart.style.opacity = 1;
+        }, 100);
       }
     });
   } else {
@@ -117,6 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
     quizAnswerWrapper.style.display = "none";
     if (quizEnd) {
       quizEnd.style.display = "block";
+      quizEnd.style.opacity = 0;
+      setTimeout(() => {
+        quizEnd.style.transition = "opacity 0.5s ease";
+        quizEnd.style.opacity = 1;
+      }, 100);
       if (quizEndNumber) {
         quizEndNumber.textContent = score;
       }
