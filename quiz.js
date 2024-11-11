@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
       if (quizStart && quizAnswerWrapper) {
         quizStart.style.display = "none";
         quizAnswerWrapper.style.display = "flex";
+        quizAnswerWrapper.style.opacity = 0;
+        setTimeout(() => {
+          quizAnswerWrapper.style.transition = "opacity 0.5s ease";
+          quizAnswerWrapper.style.opacity = 1;
+        }, 100);
 
         startQuiz();
       }
@@ -73,6 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
           opzione.style.display = "none";
         }
       });
+
+      quizAnswerWrapper.style.opacity = 0;
+      setTimeout(() => {
+        quizAnswerWrapper.style.transition = "opacity 0.5s ease";
+        quizAnswerWrapper.style.opacity = 1;
+      }, 100);
     } else {
       mostraRisultato();
     }
