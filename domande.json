@@ -1,11 +1,11 @@
 [
     {
-      "domanda": "Cos'è lo smishing?",
+      "domanda": "Cos'è lo Smishing?",
       "risposte": ["Un attacco tramite email", "Un attacco tramite SMS", "Un attacco tramite telefonate vocali", "Un malware per PC"],
       "giusta": 1
     },
     {
-      "domanda": "Quale dei seguenti è un chiaro indicatore di un attacco di smishing?",
+      "domanda": "Quale dei seguenti è un chiaro indicatore di un attacco di Smishing?",
       "risposte": ["Richiesta di azione immediata", "Uso di un linguaggio tecnico complesso", "Notifica SMS di accesso al proprio Digital Banking", "Entrambe a e c"],
       "giusta": 0
     },
@@ -50,7 +50,7 @@
       "giusta": 0
     },
     {
-      "domanda": "Un attacco di smishing può essere evitato non cliccando sui link sospetti ricevuti via SMS.",
+      "domanda": "Un attacco di Smishing può essere evitato non cliccando sui link sospetti ricevuti via SMS.",
       "risposte": ["Vero", "Falso"],
       "giusta": 0
     },
