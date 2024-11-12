@@ -73,6 +73,31 @@
       "domanda": "Le applicazioni scaricate da store ufficiali sono sempre sicure al 100%.",
       "risposte": ["Vero", "Falso"],
       "giusta": 1
+    },
+    {
+      "domanda": "Che cosa è lo Spoofing?",
+      "risposte": ["È la falsificazione dell'identità per ingannare il destinatario", "È un software che protegge la rete da attacchi", "È un virus che si diffonde tramite dispositivi mobili","È un metodo di crittografia per proteggere i dati personali"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Che tipo di Spoofing comporta la falsificazione delle informazioni relative all'ID chiamante (CLI)?",
+      "risposte": ["Caller ID Spoofing", "DNS Spoofing", "MAC Address Spoofing","URL Spoofing"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Con lo Spoofing si può falsificare?",
+      "risposte": ["E-mail, IP, chiamate telefoniche, SMS", "Solo le credenziali di accesso", "Solo i dispositivi hardware","Solo gli account social"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Chi utilizza lo Spoofing?",
+      "risposte": ["Hacker e truffatori", "Solo istituzioni finanziarie", "Solo utenti esperti di tecnologia","Solo aziende di marketing per tracciare utenti"],
+      "giusta": 0
+    },
+    {
+      "domanda": "Come ci si può difendere dallo Spoofing?",
+      "risposte": ["Non cliccando su link o allegati sospetti", "Abilitando l'autenticazione a due fattori (2FA) quando possibile", "Non condividendo in rete i propri dati personali","Tutte le risposte"],
+      "giusta": 3
     }
   ]
   
