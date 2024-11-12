@@ -30,8 +30,8 @@
       "giusta": 3
     },
     {
-      "domanda": "Quali di questi suggerimenti non sono utili per la creazione di una password sicura?",
-      "risposte": ["Usare parole scritte al contrario", "Usare una combinazione di lettere maiuscole, minuscole, numeri e simboli", "Usare una lunga serie di parole o caratteri senza un apparente senso", "Usare il proprio nome o data di nascita"],
+      "domanda": "Quali di questi suggerimenti sono utili per la creazione di una password sicura?",
+      "risposte": ["Utilizzare informazioni personali facilmente reperibili, come il tuo nome o la tua data di nascita", "Scegliere una password breve, ad esempio '1234'", "Riutilizzare la stessa password per tutti i tuoi account", "Usare una lunga serie di parole o caratteri senza un apparente senso"],
       "giusta": 2
     },
     {
